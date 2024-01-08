@@ -1,0 +1,12 @@
+{"properties": [
+  {
+    "name": "missionReimbursementRequestApprovedExchangeName",
+    "type": "java.lang.String",
+    "description": "A description for 'missionReimbursementRequestApprovedExchangeName'"
+  },
+  {
+    "name": "missionReimbursementRequestApprovedQueueName",
+    "type": "java.lang.String",
+    "description": "A description for 'missionReimbursementRequestApprovedQueueName'"
+  }
+]}

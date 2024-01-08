@@ -3,11 +3,15 @@ package ma.ensias.a.gl.g1.missioncostcalculationmicroservice.service;
 import java.util.List;
 import java.util.Optional;
 
+import org.springframework.stereotype.Service;
+
 import ma.ensias.a.gl.g1.missioncostcalculationmicroservice.domain.MissionCostCalculation;
 import ma.ensias.a.gl.g1.missioncostcalculationmicroservice.domain.MissionCostCalculation.State;
 import ma.ensias.a.gl.g1.missioncostcalculationmicroservice.exception.InvalidMissionCostCalculationIdException;
 import ma.ensias.a.gl.g1.missioncostcalculationmicroservice.repository.MissionCostCalculationRepository;
 
+
+@Service
 public class MissionCostCalculationServiceImpl  implements MissionCostCalculationService{
     
     private MissionCostCalculationRepository missionCostCalculationRepository;
