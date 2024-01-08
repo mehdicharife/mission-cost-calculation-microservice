@@ -8,6 +8,12 @@ import jakarta.persistence.Id;
 @Entity
 public class MissionCostCalculation {
 
+    public enum State {
+        CREATED,
+        VERIFIED,
+        REFUTED
+    }
+
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Long id;
@@ -15,6 +21,8 @@ public class MissionCostCalculation {
     private Long missionId;
 
     private Double amount;
+
+    private State state;
 
 
     public Long getId() {
@@ -40,5 +48,14 @@ public class MissionCostCalculation {
     public void setAmount(Double amount) {
         this.amount = amount;
     }
+
+    public State getState() {
+        return this.state;
+    }
+
+    public void setState(State state) {
+        this.state = state;
+    }
+
 
 }
