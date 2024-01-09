@@ -31,7 +31,7 @@ public class RabbitMQConfig {
     @Value("${missionReimbursementRequestApprovedQueueName}")
     private String reimbursementRequestApprovedQueueName;
 
-
+    @Value("${missionCostCalculationVerifiedExchangeName}")
     private String missionCostCalculationVerifiedExchangeName;
 
     
@@ -57,6 +57,8 @@ public class RabbitMQConfig {
 
 
 
+
+    
     @Bean
     public ClassMapper classMapper() {
         DefaultClassMapper classMapper = new DefaultClassMapper();

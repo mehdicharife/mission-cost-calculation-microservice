@@ -20,9 +20,18 @@ public class MissionCostCalculation {
 
     private Long missionId;
 
+    private Long professorId;
+
     private Double amount;
 
-    private State state;
+    private State state = State.CREATED;
+
+    public MissionCostCalculation() {}
+
+    public MissionCostCalculation(Long missionId, Long professorId) {
+        this.missionId = missionId;
+        this.professorId = professorId;
+    }
 
 
     public Long getId() {
@@ -40,6 +49,16 @@ public class MissionCostCalculation {
     public void setMissionId(Long missionId) {
         this.missionId = missionId;
     }
+
+
+    public Long getProfessorId() {
+        return this.professorId;
+    }
+
+    public void setProfessorId(Long professorId) {
+        this.professorId = professorId;
+    }
+
 
     public Double getAmount() {
         return this.amount;
