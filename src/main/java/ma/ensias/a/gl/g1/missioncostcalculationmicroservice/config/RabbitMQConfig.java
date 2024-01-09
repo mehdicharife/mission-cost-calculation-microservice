@@ -8,6 +8,7 @@ import org.springframework.amqp.core.FanoutExchange;
 import org.springframework.amqp.core.Queue;
 import org.springframework.amqp.core.QueueBuilder;
 import org.springframework.amqp.rabbit.connection.ConnectionFactory;
+import org.springframework.amqp.rabbit.core.RabbitAdmin;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.amqp.support.converter.ClassMapper;
 import org.springframework.amqp.support.converter.DefaultClassMapper;
@@ -54,8 +55,6 @@ public class RabbitMQConfig {
     public FanoutExchange missionCostCalculationExchange() {
         return new FanoutExchange(missionCostCalculationVerifiedExchangeName);
     }
-
-
 
 
     

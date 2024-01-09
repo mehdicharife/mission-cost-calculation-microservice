@@ -8,16 +8,20 @@ public class MissionCostCalculationVerifiedEvent {
 
     private Long professorId;
 
+    private Double sum;
+
 
     public MissionCostCalculationVerifiedEvent() {
     }
 
 
-    public MissionCostCalculationVerifiedEvent(Long missionCostCalculationId, Long missionId, Long professorId) {
+    public MissionCostCalculationVerifiedEvent(Long missionCostCalculationId, Long missionId, Long professorId, Double sum) {
         this.missionCostCalculationId = missionCostCalculationId;
         this.missionId = missionId;
         this.professorId = professorId;
+        this.sum = sum;
     }
+
 
 
     public Long getMissionCostCalculationId() {
@@ -44,5 +48,14 @@ public class MissionCostCalculationVerifiedEvent {
     public void setProfessorId(Long professorId) {
         this.professorId = professorId;
     }
+
+    public Double getSum() {
+        return this.sum;
+    }
+
+    public void setSum(Double sum) {
+        this.sum = sum;
+    }
+
 
 }

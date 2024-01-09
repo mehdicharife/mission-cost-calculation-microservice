@@ -44,4 +44,15 @@ public class MissionReimbursementRequestApprovedEvent {
         this.professorId = professorId;
     }
 
+
+    @Override
+    public String toString() {
+        return "{" +
+            " missionReimbursementRequestId='" + getMissionReimbursementRequestId() + "'" +
+            ", missionId='" + getMissionId() + "'" +
+            ", professorId='" + getProfessorId() + "'" +
+            "}";
+    }
+
+
 }

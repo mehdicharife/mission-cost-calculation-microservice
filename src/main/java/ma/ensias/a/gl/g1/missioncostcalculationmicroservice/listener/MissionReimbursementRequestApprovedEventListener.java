@@ -33,10 +33,12 @@ public class MissionReimbursementRequestApprovedEventListener {
             event.getProfessorId()
         );
 
-        Mission mission = this.restTemplate.getForObject(esb + "missions/" + event.getMissionId(), Mission.class);
-        missionCostCalculation.setAmount(MissionCostCalculator.calculateMissionCost(mission));
+        System.out.println(event);
 
-        this.missionCostCalculationService.saveMissionCostCalculation(missionCostCalculation);
+        //Mission mission = this.restTemplate.getForObject(esb + "missions/" + event.getMissionId(), Mission.class);
+        //missionCostCalculation.setAmount(MissionCostCalculator.calculateMissionCost(mission));
+
+        //this.missionCostCalculationService.saveMissionCostCalculation(missionCostCalculation);
     }
     
 }

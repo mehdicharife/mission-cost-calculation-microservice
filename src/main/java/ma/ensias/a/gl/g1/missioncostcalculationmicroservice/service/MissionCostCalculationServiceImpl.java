@@ -26,21 +26,26 @@ public class MissionCostCalculationServiceImpl  implements MissionCostCalculatio
     @Value("${missionCostCalculationVerifiedExchangeName}")
     private String missionCostCalculationVerifiedExchangeName;
 
+
     public MissionCostCalculationServiceImpl(MissionCostCalculationRepository missionCostCalculationRepository) {
         this.missionCostCalculationRepository = missionCostCalculationRepository;
     }
+
 
     public List<MissionCostCalculation> getAllMissionCostCalculations() {
         return this.missionCostCalculationRepository.findAll();
     }
 
+
     public Optional<MissionCostCalculation> getMissionCostCalculationById(Long id) {
         return this.missionCostCalculationRepository.findById(id);
     }
 
+
     public MissionCostCalculation saveMissionCostCalculation(MissionCostCalculation missionCostCalculation) {
         return this.missionCostCalculationRepository.save(missionCostCalculation);
     }
+
 
     public MissionCostCalculation verifyMissionCostCalculationById(Long id) throws InvalidMissionCostCalculationIdException {
         Optional<MissionCostCalculation> optionalMissionCostCalculation = this.missionCostCalculationRepository.findById(id);
@@ -52,7 +57,8 @@ public class MissionCostCalculationServiceImpl  implements MissionCostCalculatio
             MissionCostCalculationVerifiedEvent event = new MissionCostCalculationVerifiedEvent(
                 missionCostCalculation.getId(),
                 missionCostCalculation.getMissionId(),
-                missionCostCalculation.getProfessorId()
+                missionCostCalculation.getProfessorId(),
+                missionCostCalculation.getAmount()
             );
             this.rabbitTemplate.convertAndSend(missionCostCalculationVerifiedExchangeName, event);
             
@@ -62,6 +68,7 @@ public class MissionCostCalculationServiceImpl  implements MissionCostCalculatio
         throw new InvalidMissionCostCalculationIdException(id + " doesn't point to any existing mission cost calculation.");
     }
 
+    
     public MissionCostCalculation refuteMissionCostCalculationById(Long id) throws InvalidMissionCostCalculationIdException {
         Optional<MissionCostCalculation> optionalMissionCostCalculation = this.missionCostCalculationRepository.findById(id);
         if(optionalMissionCostCalculation.isPresent()) {
